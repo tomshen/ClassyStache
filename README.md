@@ -1,4 +1,4 @@
-ClassyStache
+[ClassyStache](http://tomshen.github.com/ClassyStache/)
 ============
 _The classiest game ever_
 
