@@ -4,6 +4,7 @@ _The classiest game ever_
 
 What is ClassyStache and why should I care?
 -------------------------------------------
+It's Asteroids, but you are a mustache shooting noses at monocles. What more could you ask for?
 
 Technical Stuff
 ---------------
@@ -14,4 +15,9 @@ Technical Stuff
 * main.py - creates and updates display, handles game logic
 * pygame2exe.py - creates a standalone .exe from the source code
 
-
+Planned for future updates
+--------------------------
+* Sound effects
+* Background music
+* Different modes
+* Different player, bullet, and enemy models
