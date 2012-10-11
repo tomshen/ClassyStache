@@ -2,6 +2,9 @@
 ============
 _The classiest game ever_
 
+What is ClassyStache and why should I care?
+-------------------------------------------
+
 Technical Stuff
 ---------------
 * imageloader.py - loads all images and creates rects for them, if necessary
