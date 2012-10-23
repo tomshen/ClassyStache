@@ -14,10 +14,14 @@ Technical Stuff
 * ui.py - methods for updating and drawing the ui
 * main.py - creates and updates display, handles game logic
 * pygame2exe.py - creates a standalone .exe from the source code
+* bigimageloader.py - for a 975x600 game size--still a work in progress
 
 Planned for future updates
 --------------------------
+* Instructions
+* Scaling game to 975x600
 * Sound effects
 * Background music
 * Different modes
+Added larger resolution support (still WIP)
 * Different player, bullet, and enemy models

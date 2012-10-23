@@ -204,7 +204,7 @@ class Monocle(pygame.sprite.Sprite):
 
 		# rotate the monocle	
 		baseImage = pygame.transform.scale(img.monocleImage, (self.size, self.size))
-		self.direction += self.speedX+self.speedY
+		self.direction += self.speedX + self.speedY
 		center = self.rect.center
 		self.image = pygame.transform.rotate(baseImage, self.direction)
 		self.mask = pygame.mask.from_surface(self.image)

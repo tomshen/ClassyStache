@@ -44,6 +44,7 @@ while True:
 
 	while not gameOver: # runs while actually playing the game
 		u.drawBackground(display)
+		paused = False
 		
 		for event in pygame.event.get():
 			if event.type == QUIT:
@@ -64,7 +65,7 @@ while True:
 				if event.key == K_ESCAPE:
 					u.terminate()
 				if event.key == event.key == ord('p'):
-					u.pauseGame()
+					paused = True
 				if event.key == K_UP or event.key == ord('w'):
 					thrustersOn = False
 				if event.key == K_LEFT or event.key == ord('a'):
@@ -105,6 +106,8 @@ while True:
 		u.drawScore(display, score)
 		
 		pygame.display.update()
+		if paused:
+			u.pauseGame(display)
 		mainClock.tick(s.fps)
 
 		# determine if game is over

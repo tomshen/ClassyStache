@@ -1,4 +1,5 @@
 # images gathered in one place, and associated rects, if appropriate
+# for a bigger game screen (975 x 600) change import statements to use this file and change scaling in settingsloader to 1.5
 
 import pygame, os
 import settingsloader as s
@@ -23,20 +24,20 @@ monocleImage = pygame.image.load(os.path.join('images', 'Mon.png'))
 screenImages = {}
 screenRects = {}
 
-screenImages['background'] = pygame.image.load(os.path.join('images', 'BG.png'))
-screenRects['background'] = screenImages['background'].get_rect()
+screenImages['background']=pygame.image.load(os.path.join('images', 'BigBG.png'))
+screenRects['background']=screenImages['background'].get_rect()
 
-screenImages['title'] = pygame.image.load(os.path.join('images', 'Title.png'))
-screenRects['title'] = screenImages['title'].get_rect()
+screenImages['title']=pygame.image.load(os.path.join('images', 'BigTitle.png'))
+screenRects['title']=screenImages['title'].get_rect()
 
-screenImages['instruct'] = pygame.image.load(os.path.join('images', 'Instruct.png'))
-screenRects['instruct'] = screenImages['instruct'].get_rect()
+screenImages['instruct']=pygame.image.load(os.path.join('images', 'BigInstruct.png'))
+screenRects['instruct']=screenImages['instruct'].get_rect()
 
-screenImages['pause'] = pygame.image.load(os.path.join('images', 'Pause.png'))
-screenRects['pause'] = screenImages['pause'].get_rect()
+screenImages['pause']=pygame.image.load(os.path.join('images', 'BigPause.png'))
+screenRects['pause']=screenImages['pause'].get_rect()
 
-screenImages['over'] = pygame.image.load(os.path.join('images', 'Over.png'))
-screenRects['over'] = screenImages['over'].get_rect()
+screenImages['over']=pygame.image.load(os.path.join('images', 'BigOver.png'))
+screenRects['over']=screenImages['over'].get_rect()
 
 
 # ui

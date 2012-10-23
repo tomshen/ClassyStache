@@ -2,8 +2,9 @@
 import pygame, os
 
 # window
-windowWidth = 650
-windowHeight = 400
+scaling = 1
+windowWidth = int(scaling * 650)
+windowHeight = int(scaling * 400)
 fps = 30
 
 # stache
@@ -16,7 +17,7 @@ stacheFiringInterval = fps * 0.5 # fires twice a second
 
 # bullet
 bulletLaunchSpeed = 9 # how fast it travels relative the stache when it is fired
-bulletStartingLifetime = fps * 1 # how long it will last for before disappearing
+bulletStartingLifetime = int(scaling * fps * 1) # how long it will last for before disappearing
 
 # monocle
 monocleMinSize = 22
