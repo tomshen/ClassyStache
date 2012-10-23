@@ -23,5 +23,5 @@ Planned for future updates
 * Sound effects
 * Background music
 * Different modes
-Added larger resolution support (still WIP)
+* Added larger resolution support (still WIP)
 * Different player, bullet, and enemy models
