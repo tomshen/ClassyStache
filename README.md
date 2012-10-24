@@ -10,7 +10,7 @@ Playing the game
 ----------------
 There are two ways to run the game:
 * `python main.py` -- requires [Python 2.7.*](http://www.python.org/download/) and [pygame](http://www.pygame.org/download.shtml)
-* Launch `ClassyStache.exe` with `images` in the same directory
+* Download `ClassyStache.zip`, unzip to alocation of your choice, and run `ClassyStache.exe`
 
 Technical stuff
 ---------------
@@ -20,7 +20,6 @@ Technical stuff
 * `bigimageloader.py` - loads all images and creates rects for them, if necessary (975 by 600)
 * `imageloader.py` - loads all images and creates rects for them, if necessary (650 by 400)
 * `main.py` - creates and updates display, handles game logic
-* `pygame2exe.py` - creates a standalone `.exe` from the source code
 
 Planned for future updates
 --------------------------
@@ -29,7 +28,7 @@ Tom:
 
 Taylor:
 * Make big pause image transparent
-* Hi-score table
-* Different player, bullet, and enemy models
+* High score table
 * Sound effects
 * Background music
+* Different player, bullet, and enemy models
