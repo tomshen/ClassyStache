@@ -2,7 +2,7 @@
 import pygame, os
 
 # window
-scaling = 1
+scaling = 1.5
 windowWidth = int(scaling * 650)
 windowHeight = int(scaling * 400)
 fps = 30

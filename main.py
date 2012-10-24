@@ -4,8 +4,14 @@ import pygame._view
 
 import sprites
 import settingsloader as s
-import imageloader as img
-import ui as u
+import bigimageloader as img
+import gui as u
+
+def addMoreMonocles(monocles):
+	for i in xrange(s.maxMonocles):
+		monocles.add(sprites.Monocle(random.randint(s.monocleMinSize, s.monocleMaxSize),
+						  (random.randint(0, s.windowWidth),
+						   random.randint(0, s.windowHeight))))
 	
 # start and set up display
 pygame.init()
@@ -23,6 +29,7 @@ while True:
 	# set up the start of the game
 	u.drawBackground(display)
 	score = 0
+	level = 1
 	
 	stache = sprites.Stache()
 	player = pygame.sprite.Group()
@@ -35,10 +42,7 @@ while True:
 
 	monocles = pygame.sprite.Group()
 	
-	for i in xrange(s.maxMonocles):
-		monocles.add(sprites.Monocle(random.randint(s.monocleMinSize, s.monocleMaxSize),
-						  (random.randint(0, s.windowWidth),
-						   random.randint(0, s.windowHeight))))
+	addMoreMonocles(monocles)
 
 	gameOver = False
 
@@ -75,6 +79,7 @@ while True:
 				if event.key == K_SPACE:
 					isFiring = False
 
+		# update sprites
 		stache.update(display, thrustersOn, directionToTurn, isFiring, bullets)
 		bullets.update()
 		monocles.update()
@@ -102,17 +107,27 @@ while True:
 		if stache.immuneCounter > 0:
 			stache.immuneCounter -= 1
 		
+		# advance level and add more monocles if necessary
+		if(not monocles):
+			level += 1
+			addMoreMonocles(monocles)
+
+		# update gui
+		u.drawLevel(display, level)
 		u.drawLives(display, stache.lives)
 		u.drawScore(display, score)
-		
-		pygame.display.update()
-		if paused:
-			u.pauseGame(display)
-		mainClock.tick(s.fps)
 
 		# determine if game is over
-		if(stache.lives == 0 or not monocles): # win/lose condition
+		if(stache.lives == 0): # win/lose condition
 			gameOver = True
+		
+		# draw everything
+		pygame.display.update()
+		
+		if paused:
+			u.pauseGame(display)
+		
+		mainClock.tick(s.fps)
 		  
 	# stop the game and show the Game Over display
 	u.drawScreen(display, 'over')

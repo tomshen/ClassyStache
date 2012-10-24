@@ -1,6 +1,6 @@
 import pygame, random, math
 import settingsloader as s
-import imageloader as img
+import bigimageloader as img
 
 class Stache(pygame.sprite.Sprite):
 	speedX = 0

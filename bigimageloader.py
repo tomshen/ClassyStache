@@ -40,14 +40,14 @@ screenImages['over']=pygame.image.load(os.path.join('images', 'BigOver.png'))
 screenRects['over']=screenImages['over'].get_rect()
 
 
-# ui
-scoreImages = []
-scoreImageRects = []
+# gui
+digitImages = []
+digitImageRects = []
 for i in range(10):
-	scoreImages.append(pygame.image.load(os.path.join('images', str(i)+'.png')))
+	digitImages.append(pygame.image.load(os.path.join('images', str(i)+'.png')))
 for i in range(10):
-	scoreImageRects.append(scoreImages[i].get_rect())
-	scoreImageRects[i].top = 0
+	digitImageRects.append(digitImages[i].get_rect())
+	digitImageRects[i].top = 0
 	
 livesImages = []
 livesImageRects = []
@@ -57,6 +57,9 @@ for i in range(s.stacheStartingLives):
 	livesImageRects.append(livesImages[i].get_rect())
 	livesImageRects[i].left = 0
 	livesImageRects[i].top = 0
+
+levelImage = pygame.image.load(os.path.join('images', 'Level.png'))
+levelRect = levelImage.get_rect()
 	
 # icon
 iconImage = pygame.image.load(os.path.join('images', 'Icon.png'))
