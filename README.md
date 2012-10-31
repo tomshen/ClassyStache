@@ -25,11 +25,10 @@ Planned for future updates
 --------------------------
 Tom:
 * Different modes
+* High score table
+* Fix wraparound
 
 Taylor:
-* Make big pause image transparent
-* High score table
-* Different player, bullet, and enemy models
 * Distance sensitive buzz
 * Multiple shooting sounds
 * Multiple glass sounds
