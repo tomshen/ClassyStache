@@ -100,15 +100,15 @@ class Stache(pygame.sprite.Sprite):
 
 		# mirror stache on opposite side if close to boundary on one side
 		if self.rect.y > bottom-100:
-			display.blit(self.image, (self.rect.x, self.rect.y - bottom))
+			display.blit(self.image, (self.rect.x, self.rect.y - bottom), special_flags =  6)
 		elif self.rect.y < top+100:
-			display.blit(self.image, (self.rect.x, self.rect.y + bottom))
+			display.blit(self.image, (self.rect.x, self.rect.y + bottom), special_flags =  6)
 		elif self.rect.x > right-100:
-			display.blit(self.image, (self.rect.x - right, self.rect.y))
+			display.blit(self.image, (self.rect.x - right, self.rect.y), special_flags =  6)
 		elif self.rect.x < left+100:
-			display.blit(self.image, (self.rect.x + right, self.rect.y))
+			display.blit(self.image, (self.rect.x + right, self.rect.y), special_flags =  6)
 		
-		display.blit(self.image, (self.rect.x + right, self.rect.y + bottom))
+		display.blit(self.image, (self.rect.x + right, self.rect.y + bottom), special_flags =  6)
 		
 		if isFiring:
 			self.firingTimer += 1

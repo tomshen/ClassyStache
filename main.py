@@ -1,11 +1,13 @@
 import pygame, random, os
 from pygame.locals import *
-import pygame._view
+#import pygame._view
 
 import sprites
 import settingsloader as s
 import bigimageloader as img
 import gui as u
+import audioLoader as audio
+import audioController as a
 
 def addMoreMonocles(monocles):
 	for i in xrange(s.maxMonocles):
@@ -15,16 +17,22 @@ def addMoreMonocles(monocles):
 	
 # start and set up display
 pygame.init()
+pygame.mixer.init()
+mixer = pygame.mixer
 pygame.display.set_icon(img.iconImage)
 mainClock = pygame.time.Clock()
 display = pygame.display.set_mode((s.windowWidth, s.windowHeight))
 pygame.display.set_caption('ClassyStache')
 pygame.mouse.set_visible(False)
 
+
+#start audio
+a.playStartMusic(mixer)
+
 # show the Title display
 u.showAndWait(display, 'title')
 u.showAndWait(display, 'instruct')
-
+a.playGameMusic(mixer)#Game begins
 while True:
 	# set up the start of the game
 	u.drawBackground(display)
@@ -63,6 +71,7 @@ while True:
 					directionToTurn = 1
 				if event.key == K_SPACE:
 					isFiring = True
+					a.fire(mixer)
 					bullets.add(stache.fire())
 				 
 			if event.type == KEYUP:
@@ -94,6 +103,7 @@ while True:
 		for monocle in monocles:
 			for bullet in bullets:
 				if pygame.sprite.collide_mask(bullet, monocle):
+					a.glass(mixer)
 					bullet.kill()
 					if(monocle.size > 25 + s.monocleMinSize):
 						monocles.add(sprites.Monocle(monocle.size - 25, monocle.rect.center))
@@ -102,6 +112,7 @@ while True:
 					monocle.kill()
 			if pygame.sprite.collide_mask(stache, monocle) and stache.immuneCounter <= 0:
 				stache.lives -= 1;
+				a.damage(mixer,stache.lives)
 				stache.immuneCounter = s.fps
 				
 		if stache.immuneCounter > 0:
@@ -131,6 +142,7 @@ while True:
 		  
 	# stop the game and show the Game Over display
 	u.drawScreen(display, 'over')
+	a.playEndMusic(mixer)
 	while gameOver:
 		for event in pygame.event.get():
 			if event.type == QUIT:
@@ -139,4 +151,5 @@ while True:
 				if event.key == K_ESCAPE:
 					u.terminate()
 				if event.key == K_SPACE:
+					a.playGameMusic(mixer)
 					gameOver = False
