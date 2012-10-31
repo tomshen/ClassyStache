@@ -29,6 +29,11 @@ Tom:
 Taylor:
 * Make big pause image transparent
 * High score table
-* Sound effects
-* Background music
 * Different player, bullet, and enemy models
+* Distance sensitive buzz
+* Multiple shooting sounds
+* Multiple glass sounds
+* Level up Sound
+* Extra life sound
+* Sound balance
+* Email Koz about antialiasing
