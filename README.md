@@ -9,8 +9,8 @@ It's Asteroids, but you are a mustache shooting noses at monocles. What more cou
 Playing the game
 ----------------
 There are two ways to run the game:
-* `python main.py` -- requires [Python 2.7.*](http://www.python.org/download/) and [pygame](http://www.pygame.org/download.shtml)
-* Download `ClassyStache.zip`, unzip to alocation of your choice, and run `ClassyStache.exe`
+* `python main.py` -- requires [Python 2.7](http://www.python.org/download/) and [pygame](http://www.pygame.org/download.shtml)
+* (On Windows) Download [ClassyStache.zip](http://dl.tomshen.me/ClassyStache.zip), extract to a location of your choice, and run `main.exe`
 
 Technical stuff
 ---------------
@@ -20,19 +20,3 @@ Technical stuff
 * `bigimageloader.py` - loads all images and creates rects for them, if necessary (975 by 600)
 * `imageloader.py` - loads all images and creates rects for them, if necessary (650 by 400)
 * `main.py` - creates and updates display, handles game logic
-
-Planned for future updates
---------------------------
-Tom:
-* Different modes
-* High score table
-* Fix wraparound
-
-Taylor:
-* Distance sensitive buzz
-* Multiple shooting sounds
-* Multiple glass sounds
-* Level up Sound
-* Extra life sound
-* Sound balance
-* Email Koz about antialiasing
