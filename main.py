@@ -10,7 +10,7 @@ import audioLoader as audio
 import audioController as a
 
 def addMoreMonocles(monocles):
-	for i in xrange(s.maxMonocles):
+	for i in range(s.maxMonocles):
 		monocles.add(sprites.Monocle(random.randint(s.monocleMinSize, s.monocleMaxSize),
 						  (random.randint(0, s.windowWidth),
 						   random.randint(0, s.windowHeight))))

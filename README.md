@@ -9,8 +9,7 @@ It's Asteroids, but you are a mustache shooting noses at monocles. What more cou
 Playing the game
 ----------------
 There are two ways to run the game:
-* `python main.py` -- requires [Python 2.7](http://www.python.org/download/) and [pygame](http://www.pygame.org/download.shtml)
-* (On Windows) Download [ClassyStache.zip](http://dl.tomshen.me/ClassyStache.zip), extract to a location of your choice, and run `main.exe`
+* `python main.py` -- requires [Python 3.8](http://www.python.org/download/) and [pygame](http://www.pygame.org/download.shtml)
 
 Technical stuff
 ---------------

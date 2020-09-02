@@ -12,9 +12,9 @@ def drawScore(display, score):
 		display.blit(img.digitImages[0], img.digitImageRects[0])
 	i = 0
 	while score > 0:
-		img.digitImageRects[score % 10].top = 0
-		img.digitImageRects[score % 10].right = s.windowWidth-(30 * i)
-		display.blit(img.digitImages[score % 10], img.digitImageRects[score % 10])
+		img.digitImageRects[int(score % 10)].top = 0
+		img.digitImageRects[int(score % 10)].right = s.windowWidth-(30 * i)
+		display.blit(img.digitImages[int(score % 10)], img.digitImageRects[int(score % 10)])
 		score /= 10
 		i += 1
 
